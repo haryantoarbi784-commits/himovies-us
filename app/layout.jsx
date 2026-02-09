@@ -6,12 +6,11 @@ import AdsterraLayoutWrapper from '../components/layout/AdsterraLayoutWrapper';
 import AdBanner from '../components/ads/AdBanner'; 
 
 export const metadata = {
-  title: 'Himovies | Watch Movies, Stream TV Series Free - Complete Movie Database',
-  description: 'Himovies is your ultimate movie database with 10,000+ movies, 5,000+ TV series, actor profiles, genre pages, and yearly archives. Discover, stream, and enjoy cinematic excellence with our comprehensive entertainment platform.',
-  keywords: 'movies, tv series, streaming, movie database, actors, genres, rankings, movie archives',
+  title: 'Watch Movies Online Free | Stream TV Series HD - Himovies',
+  description: 'Find where to watch movies & TV series online for free or on Netflix, Disney+, Prime Video. Himovies tracks 10,000+ movies, 5,000+ shows, box office results, actor info, and provides HD streaming guides across all genres (action, horror, romance, anime, drakor).',
   openGraph: {
-    title: 'Himovies | Complete Movie & TV Series Database',
-    description: 'Your ultimate destination for movies, TV series, actor profiles, and streaming information. Explore genres, yearly archives, and top rankings.',
+    title: 'Watch Movies Online Free | Stream TV Series HD - Himovies',
+    description: 'Find where to watch movies & TV series online for free or on Netflix, Disney+, Prime Video. Get streaming guides, actor profiles, and genre recommendations.',
     url: 'https://himovies-us.netlify.app',
     siteName: 'Himovies',
     images: [
@@ -19,7 +18,7 @@ export const metadata = {
         url: 'https://live.staticflickr.com/65535/54803471299_d3df3e14c1_b.jpg',
         width: 1200,
         height: 630,
-        alt: 'Himovies - Complete Movie Database',
+        alt: 'Himovies - Watch Movies Online Free and Stream TV Series',
       },
     ],
     locale: 'en_US',
@@ -29,8 +28,8 @@ export const metadata = {
     card: 'summary_large_image',
     site: '@WatchStream123',
     creator: '@WatchStream123',
-    title: 'Himovies | Complete Movie & TV Series Database',
-    description: 'Explore 10,000+ movies, 5,000+ TV series, actor profiles, and streaming guides on Himovies.',
+    title: 'Watch Movies Online Free | Stream TV Series HD - Himovies',
+    description: 'Find where to watch movies & TV series online for free or on Netflix, Disney+, Prime Video. Streaming guides and recommendations.',
     images: ['https://live.staticflickr.com/65535/54803471299_d3df3e14c1_b.jpg'],
   },
   // Tambahkan tag meta eksplisit untuk Facebook
@@ -48,6 +47,38 @@ export default async function RootLayout({ children }) {
     <html lang="en">
       <head>
         <meta name="google-site-verification" content="sC1yWe818KJ7JmnjQd3xhqbXr59llKvq_Be7SDvN_ec" />
+        {/* Structured Data untuk SEO */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "Himovies",
+              "url": "https://himovies-us.netlify.app",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://himovies-us.netlify.app/search?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+              },
+              "description": "Find where to watch movies & TV series online for free or on Netflix, Disney+, Prime Video.",
+              "keywords": "watch movies, stream TV series, movie database, where to watch, streaming guide"
+            })
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Himovies",
+              "url": "https://himovies-us.netlify.app",
+              "logo": "https://live.staticflickr.com/65535/54803471299_d3df3e14c1_b.jpg",
+              "description": "Streaming guide and movie database"
+            })
+          }}
+        />
       </head>
       <body>
         <AdsterraLayoutWrapper countryCode={countryCode}>

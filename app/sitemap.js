@@ -2,7 +2,7 @@
 const BASE_URL = 'https://himovies-us.netlify.app';
 
 export default async function sitemap() {
-  console.log('🎬 Generating dynamic sitemap for Himovies...');
+  console.log('🎬 Generating dynamic sitemap for HiMovies...');
   
   try {
     const [staticUrls, dynamicUrls] = await Promise.all([
